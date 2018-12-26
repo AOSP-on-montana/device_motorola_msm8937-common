@@ -1,1 +1,2 @@
 dontaudit hal_perf_default self:capability dac_override;
+r_dir_file(hal_perf_default, hal_power_default)
