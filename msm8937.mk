@@ -409,6 +409,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     vendor/qcom/codeaurora/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
 
+# VNDK
+PRODUCT_PACKAGES += \
+    com.android.vndk.current.on_vendor
+
 # Wifi
 PRODUCT_PACKAGES += \
     libwpa_client \
