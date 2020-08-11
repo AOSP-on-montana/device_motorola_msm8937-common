@@ -410,8 +410,12 @@ PRODUCT_COPY_FILES += \
     vendor/qcom/codeaurora/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
 
 # VNDK
+# Keep the VNDK APEX in /system partition for REL branches as these branches are
+# expected to have stable API/ABI surfaces.
+ifneq (REL,$(PLATFORM_VERSION_CODENAME))
 PRODUCT_PACKAGES += \
     com.android.vndk.current.on_vendor
+endif
 
 # Wifi
 PRODUCT_PACKAGES += \
