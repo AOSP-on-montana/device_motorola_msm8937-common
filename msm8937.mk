@@ -10,10 +10,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, vendor/motorola/msm8937-common/msm8937-common-vendor.mk)
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
-
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Properties
@@ -64,7 +61,6 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_PACKAGES += \
     libbson.vendor \
-    Snap \
     libstdc++.vendor \
     libwui
 
@@ -198,10 +194,6 @@ ifeq ($(filter ahannah rhannah,$(TARGET_DEVICE)),)
 PRODUCT_PACKAGES += \
     LineageActions
 endif
-
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sysfs
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -369,10 +361,6 @@ PRODUCT_COPY_FILES += \
 
 # Treble
 PRODUCT_FULL_TREBLE_OVERRIDE := true
-
-# Trust HAL
-PRODUCT_PACKAGES += \
-    vendor.lineage.trust@1.0-service
 
 # USB
 PRODUCT_PACKAGES += \
