@@ -42,6 +42,12 @@ $(FSG_MOUNT_POINT):
 
 ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_MOUNT_POINT) $(DSP_MOUNT_POINT) $(FSG_MOUNT_POINT)
 
+# copy kernel headers to the build tree
+$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr: $(wildcard $(PRODUCT_VENDOR_KERNEL_HEADERS)/*)
+	rm -rf $@
+	mkdir -p $@/include
+	cp -a $(PRODUCT_VENDOR_KERNEL_HEADERS)/. $@/include
+
 FIRMWARE_ADSP_IMAGES := \
     adsp.b00 adsp.b01 adsp.b02 adsp.b03 adsp.b04 adsp.b05 adsp.b06 \
     adsp.b07 adsp.b08 adsp.b09 adsp.b10 adsp.b11 adsp.b12 adsp.b13 \
