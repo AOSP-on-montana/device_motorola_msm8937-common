@@ -11,7 +11,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_SHARED_LIBRARIES := libc libcutils liblog
 
 LOCAL_C_INCLUDES := \
-        external/connectivity/cnefeatureconfig/inc
+        $(LOCAL_PATH)/inc
 
 LOCAL_PRELINK_MODULE := false
 
