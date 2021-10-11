@@ -31,6 +31,12 @@ function blob_fixup() {
             sed -i "s|/system/product/framework/|/system_ext/framework/|g" "${2}"
             ;;
 
+        system_ext/lib64/lib-imscamera.so | system_ext/lib64/lib-imsvideocodec.so | vendor/lib/libmot_gpu_mapper.so)
+            for LIBCAMERA_SHIM in $(grep -L "libcamera_shim.so" "${2}"); do
+                "${PATCHELF}" --add-needed "libcamera_shim.so" "${LIBCAMERA_SHIM}"
+            done
+            ;;
+
         # memset shim
         vendor/bin/charge_only_mode)
             for LIBMEMSET_SHIM in $(grep -L "libmemset_shim.so" "${2}"); do

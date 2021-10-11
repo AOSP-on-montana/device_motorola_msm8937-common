@@ -1,4 +1,11 @@
 cc_library {
+    name: "libcamera_shim",
+    srcs: ["camera_shim.cpp"],
+    system_ext_specific: true,
+    vendor_available: true,
+}
+
+cc_library {
     name: "libmemset_shim",
     vendor: true,
     target: {

@@ -353,6 +353,8 @@ PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
+    libcamera_shim \
+    libcamera_shim.vendor \
     libcutils_shim \
     libmemset_shim \
     libqsapshim
