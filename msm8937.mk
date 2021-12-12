@@ -129,14 +129,6 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.4-service.clearkey
 
-# Dynamic partitions
-PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
-# Fastboot
-PRODUCT_PACKAGES += \
-    fastbootd
-
 # FM
 PRODUCT_PACKAGES += \
     FMRadio \
@@ -394,9 +386,6 @@ PRODUCT_PACKAGES += \
 # Thermal
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf
-
-# Treble
-PRODUCT_FULL_TREBLE_OVERRIDE := true
 
 # USB
 PRODUCT_PACKAGES += \
