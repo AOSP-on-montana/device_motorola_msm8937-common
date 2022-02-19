@@ -15,7 +15,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 $(call inherit-product, vendor/motorola/msm8937-common/msm8937-common-vendor.mk)
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay \
+    hardware/motorola/overlay
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Properties
