@@ -39,10 +39,6 @@ PRODUCT_COPY_FILES += \
 # APEX
 OVERRIDE_PRODUCT_COMPRESSED_APEX := false
 
-# APNs
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
-
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
